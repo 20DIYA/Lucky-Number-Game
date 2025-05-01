@@ -49,10 +49,36 @@ func main() {
 		fmt.Printf("Turn %d: Generated %d\n", turn+1, n)
 
 		if n == guess {
-			fmt.Println("🎉  YOU WIN!")
+			switch r.Intn(5) {
+			case 0:
+				fmt.Println("🎉 YOU WIN! Fortune is on your side!")
+			case 1:
+				fmt.Println("👏 Bravo! You nailed it!")
+			case 2:
+				fmt.Println("🌈 Luck has smiled on you today!")
+			case 3:
+				fmt.Println("🔥 Incredible! You guessed it right!")
+			case 4:
+				fmt.Println("🏆 Victory! You’ve beaten the odds!")
+			}
+
+			if turn == 0 {
+				fmt.Println("🌟 Amazing! You guessed it on the first try!")
+			}
 			return
 		}
 	}
 
-	fmt.Println("☠️  YOU LOST... Try again?")
+	switch r.Intn(5) {
+	case 0:
+		fmt.Println("☠️ YOU LOST... Better luck next time!")
+	case 1:
+		fmt.Println("💀 So close, yet so far!")
+	case 2:
+		fmt.Println("😢 Not this time. Try again?")
+	case 3:
+		fmt.Println("👻 The lucky number slipped away...")
+	case 4:
+		fmt.Println("🙈 No match. Don’t give up!")
+	}
 }
